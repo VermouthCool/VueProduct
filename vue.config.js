@@ -22,6 +22,12 @@ module.exports={
                     '^/api':''
                 },
                 changeOrigin:true
+            },
+            '/ding':{
+                target:'https://apis.map.qq.com/ws/location/v1/ip?&key=TNCBZ-ZED3P-EEKD5-LI5UJ-FZO5Q-ALB5U',
+                pathRewrite:{
+                    '^/ding':''
+                }
             }
         }
     },

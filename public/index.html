@@ -7,8 +7,13 @@
     <!-- width=device-width布局视口等于视觉视口 -->
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_2159137_bn0thhnh6se.css">
+    <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=319fc6bfca3dbd705f2c0d66a3f8e109"></script> 
     <link rel="stylesheet" href="./reset.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      html {touch-action: manipulation;}
+    </style>
   </head>
   <body>
     <noscript>
@@ -16,5 +21,37 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+        }, false);
+      }
+      if(!window.Promise) {
+        document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+      }
+    //     var map, geolocation;
+    //     //加载地图，调用浏览器定位服务   高德地图
+    //     map = new AMap.Map('container', {
+    //         resizeEnable: true
+    //     });
+    //     map.plugin('AMap.Geolocation', function() {
+    //         geolocation = new AMap.Geolocation({
+    //         enableHighAccuracy:true,//是否使用高精度定位，默认:true
+    // 　　　　 timeout:20000,//超过10秒后停止定位，默认：无穷大
+    // 　　　　 buttonPosition:'RB'
+    //     });
+    //         geolocation.getCurrentPosition();
+    //             AMap.event.addListener(geolocation, 'complete', function onComplete(data) {
+    //             var getLongitude = data.position.getLng();
+    //             var getLatitude = data.position.getLat();
+    //             console.log(getLatitude);
+    //             alert(getLatitude)
+    //             localStorage.setItem('Jing',getLongitude);
+    //             localStorage.setItem('Wei',getLatitude)
+    //         });//返回定位信息
+    //     });
+      
+    </script>
   </body>
 </html>

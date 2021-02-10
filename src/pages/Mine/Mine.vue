@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Mine</h1>
+        <myhead title="我的"/>
     </div>
 </template>
 <script>

@@ -1,11 +1,11 @@
 <template>
-    <div class="foot">
+    <div class="foot" v-show="$route.meta.isShowFoot">
         <span class="item" :class="{on:this.$route.path==='/home'}" @click="goto('/home')">
             <span>
                 <i class="iconfont icon-waimai"></i>
             </span>
             <span>
-                首页
+                {{$t('footer_home')}}
             </span>
         </span>
          <span class="item" :class="{on:this.$route.path==='/search'}" @click="goto('/search')">
@@ -13,7 +13,7 @@
                 <i class="iconfont icon-sousuo"></i>
             </span>
             <span>
-                搜索
+                {{$t('footer_search')}}
             </span>
         </span>
          <span class="item" :class="{on:this.$route.path==='/ding'}" @click="goto('/ding')">
@@ -21,7 +21,7 @@
                 <i class="iconfont icon-dingdan"></i>
             </span>
             <span>
-                订单
+                {{$t('footer_order')}}
             </span>
         </span>
          <span class="item" :class="{on:this.$route.path==='/mine'}" @click="goto('/mine')">
@@ -29,7 +29,7 @@
                 <i class="iconfont icon-yonghu"></i>
             </span>
             <span>
-                个人
+                {{$t('footer_mine')}}
             </span>
         </span>
     </div>
@@ -38,14 +38,16 @@
 export default {
     methods: {
         goto(path){
-            this.$router.replace(path) 
+            if(this.$route.fullPath!=path)
+            this.$router.replace(path)
+            else window.location = path
         }
     },
 }
 </script>
 <style lang="stylus" scoped>
 @import '../../common/stylus/mixins.styl'
-$color = #008c8c;
+$color = #26a2ff;
     .foot
         top-border-1px(#ccc)
         display flex
@@ -54,6 +56,7 @@ $color = #008c8c;
         bottom 0
         height 50px
         width 100%
+        background-color #fff
         .item
             display flex
             flex-direction column

@@ -8,12 +8,16 @@
 <script>
 import Vue from 'vue'
 // import {mapState,mapGetters,mapMutations,mapActions} from 'vuex'
-import { Tabbar, TabItem } from 'mint-ui';
+import {  Header,Button,Swipe, SwipeItem } from 'mint-ui';
 import router from './router'
+import head from '../src/component/Header/Header'
 import FooterNav from './component/FooterNav/FooterNav';
 
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabItem.name, TabItem);
+Vue.component(Header.name, Header);
+Vue.component(Button.name,Button);
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+Vue.component('myhead', head);
 export default {
   name: 'App',
   components:{

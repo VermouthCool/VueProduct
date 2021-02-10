@@ -1,6 +1,6 @@
 <template>
     <div>
-        <myhead title="搜索"/>
+        <button>jian</button>
     </div>
 </template>
 <script>

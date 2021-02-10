@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Ding</h1>
+        <myhead title="订单"/>
     </div>
 </template>
 <script>
